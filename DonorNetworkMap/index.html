@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Versiti</title>
+    <meta name="description" content="" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <script
+      async
+      defer
+      src="https://api.mapbox.com/mapbox-assembly/v0.26.0/assembly.js"
+    ></script>
+    <link
+      href="https://api.mapbox.com/mapbox-assembly/v0.26.0/assembly.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="hed" class="text-container top left right mt0">
+      <p class="txt-bold">
+        Type your address, zipcode or select a county below and find out how
+        many people are waiting near you.
+      </p>
+      <div class="flex-parent-mm flex-parent--space-between-main">
+        <div class="select-container mt12 mt0-mm">
+          <select id="select" class="select bg-dnw-blue">
+            <option>Select a County</option>
+          </select>
+          <div class="select-arrow"></div>
+        </div>
+        <div id="geocoder"></div>
+      </div>
+    </div>
+    <div id="map"></div>
+
+    <!-- <div id="modal" class="bg-darken10 viewport-half"> -->
+    <div class="fixed bottom left pb120 pl12 scroll-auto">
+      <!-- <div class="flex-parent flex-parent--left-main pt36"> -->
+      <div class="flex-child bg-white round relative w300">
+        <div class="px24 py24">
+          <div class="txt-m">
+            I am some modal body content.
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+
+    <div id="legend" class="w240 round px12 py12 txt-s">
+      <div class="grid mb6">
+        <div id="l1" class="col h16"><p class="pl6">Low</p></div>
+        <div id="l2" class="col h16"></div>
+        <div id="l3" class="col h16"></div>
+        <div id="l4" class="col h16"></div>
+        <div id="l5" class="col h16"></div>
+        <div id="l6" class="col h16"><p class="pl6">High</p></div>
+      </div>
+    </div>
+
+    <script src="index.js " async defer></script>
+  </body>
+</html>
