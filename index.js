@@ -1,16 +1,16 @@
-let geocoderDiv = document.getElementById("geocoder");
+const geocoderDiv = document.getElementById("geocoder");
 let hoveredCountyId = null;
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWpkYW5pZWxzb24iLCJhIjoiY2s5bTJodXluMHVhYTNybWk1eTMxN2lidiJ9.DU-KkKoefUHAlSidTjqsiQ";
-let map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mjdanielson/cklh54ve0031n18sk666l6htj",
   center: [-89.6045, 44.76234],
   zoom: 6.5,
 });
 
-let geocoder = new MapboxGeocoder({
+const geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   mapboxgl: mapboxgl,
   marker: false,
@@ -41,10 +41,10 @@ map.on("load", function () {
     });
   });
 
-  var layers = map.getStyle().layers;
+  const layers = map.getStyle().layers;
   // Find the index of the first symbol layer in the map style
-  var firstSymbolId;
-  for (var i = 0; i < layers.length; i++) {
+  let firstSymbolId;
+  for (let i = 0; i < layers.length; i++) {
     if (layers[i].type === "symbol") {
       firstSymbolId = layers[i].id;
       break;
@@ -128,8 +128,7 @@ map.on("load", function () {
           { hover: false }
         );
       }
-      hoveredCountyId = e.features[0].properties.id;
-      console.log(hoveredCountyId);
+      hoveredCountyId = e.features[0].id;
       map.setFeatureState(
         {
           source: "wi_counties-0pve9b",
