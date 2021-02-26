@@ -108,7 +108,12 @@ map.on("load", function () {
           "black",
           "#D8CAC1",
         ],
-        "line-width": 1,
+        "line-width": [
+          "case",
+          ["boolean", ["feature-state", "hover"], false],
+          3,
+          0.5,
+        ],
       },
     },
     firstSymbolId
@@ -116,7 +121,7 @@ map.on("load", function () {
 
   // When the user moves their mouse over the wi-district-line layer, we'll update the
   // feature state for the feature under the mouse.
-  map.on("mousemove", "wi-district-line", function (e) {
+  map.on("mousemove", "wi-district-fill", function (e) {
     if (e.features.length > 0) {
       if (hoveredCountyId) {
         map.setFeatureState(
@@ -142,7 +147,7 @@ map.on("load", function () {
 
   // When the mouse leaves the wi-district-line layer, update the feature state of the
   // previously hovered feature.
-  map.on("mouseleave", "wi-district-line", function () {
+  map.on("mouseleave", "wi-district-fill", function () {
     if (hoveredCountyId) {
       map.setFeatureState(
         {
