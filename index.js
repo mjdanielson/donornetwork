@@ -108,7 +108,12 @@ map.on('load', function () {
           'black',
           '#D8CAC1',
         ],
-        'line-width': 1,
+        'line-width': [
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          3,
+          0.5,
+        ],
       },
     },
     firstSymbolId
