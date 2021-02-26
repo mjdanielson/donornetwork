@@ -1,0 +1,73 @@
+cartodb_id,dnr_cnty_c,county_fip,county_nam,dnr_region,num_donors
+1,30,59,Kenosha,Southeast Region,30
+6,52,101,Racine,Southeast Region,52
+9,25,49,Iowa,South Central Region,25
+10,41,79,Milwaukee,Southeast Region,41
+11,22,43,Grant,South Central Region,22
+13,12,23,Crawford,West Central Region,12
+14,53,103,Richland,South Central Region,53
+59,49,95,Polk,Northern Region,49
+60,38,75,Marinette,Northeast Region,38
+63,19,37,Florence,Northern Region,19
+64,21,41,Forest,Northern Region,21
+67,7,13,Burnett,Northern Region,7
+69,26,51,Iron,Northern Region,26
+16,46,89,Ozaukee,Southeast Region,46
+17,14,27,Dodge,South Central Region,14
+18,57,111,Sauk,South Central Region,57
+19,11,21,Columbia,South Central Region,11
+21,60,117,Sheboygan,Southeast Region,60
+25,32,63,La Crosse,West Central Region,32
+28,29,57,Juneau,West Central Region,29
+29,1,1,Adams,West Central Region,1
+32,36,71,Manitowoc,Northeast Region,36
+35,62,121,Trempealeau,West Central Region,62
+36,6,11,Buffalo,West Central Region,6
+40,5,9,Brown,Northeast Region,5
+42,31,61,Kewaunee,Northeast Region,31
+44,48,93,Pierce,West Central Region,48
+49,17,33,Dunn,West Central Region,17
+52,15,29,Door,Northeast Region,15
+54,43,83,Oconto,Northeast Region,43
+56,35,69,Lincoln,Northern Region,35
+7,28,55,Jefferson,South Central Region,28
+22,20,39,Fond du Lac,Northeast Region,20
+3,54,105,Rock,South Central Region,54
+8,68,133,Waukesha,Southeast Region,68
+2,33,65,Lafayette,South Central Region,33
+30,71,139,Winnebago,Northeast Region,71
+15,67,131,Washington,Southeast Region,67
+4,65,127,Walworth,Southeast Region,65
+5,23,45,Green,South Central Region,23
+12,13,25,Dane,South Central Region,13
+23,39,77,Marquette,Northeast Region,39
+31,8,15,Calumet,Northeast Region,8
+20,63,123,Vernon,West Central Region,63
+24,24,47,Green Lake,Northeast Region,24
+26,42,81,Monroe,West Central Region,42
+48,40,78,Menominee,Northeast Region,40
+27,70,137,Waushara,Northeast Region,70
+33,45,87,Outagamie,Northeast Region,45
+37,72,141,Wood,West Central Region,72
+38,69,135,Waupaca,Northeast Region,69
+34,27,53,Jackson,West Central Region,27
+39,50,97,Portage,West Central Region,50
+43,18,35,Eau Claire,West Central Region,18
+41,47,91,Pepin,West Central Region,47
+45,59,115,Shawano,Northeast Region,59
+46,10,19,Clark,West Central Region,10
+47,37,73,Marathon,West Central Region,37
+55,34,67,Langlade,Northern Region,34
+50,56,109,Saint Croix,West Central Region,56
+51,9,17,Chippewa,West Central Region,9
+53,61,119,Taylor,Northern Region,61
+57,55,107,Rusk,Northern Region,55
+58,3,5,Barron,Northern Region,3
+61,44,85,Oneida,Northern Region,44
+62,51,99,Price,Northern Region,51
+65,58,113,Sawyer,Northern Region,58
+66,66,129,Washburn,Northern Region,66
+68,64,125,Vilas,Northern Region,64
+70,2,3,Ashland,Northern Region,2
+71,16,31,Douglas,Northern Region,16
+72,4,7,Bayfield,Northern Region,4
