@@ -2,54 +2,14 @@ body {
   margin: 0;
   padding: 0;
 }
-#hed {
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  background-color: white;
-}
 
 #map {
   position: absolute;
   bottom: 0;
-  height: 500px;
   width: 100%;
-
-  @media (max-width: 500px) {
-    height: 300px;
-  }
-}
-
-.text-container {
-  font-size: 14px;
-  margin: 60px auto;
-  max-width: 650px;
-  padding: 0 15px;
-
-  @media (max-width: 500px) {
-    margin: 30px auto;
-  }
-}
-
-.text-container p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 14px;
-  @media (max-width: 500px) {
-    font-size: 16px;
-  }
-}
-
-#modal {
-  bottom: 50px;
 }
 
 #legend {
-  position: absolute;
-  z-index: 1;
-  bottom: 50px;
-  left: 10px;
   font-family: "Open Sans", sans-serif;
 }
 
