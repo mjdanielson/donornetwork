@@ -157,7 +157,7 @@ let countyData = [];
 const onSelect = (e) => {
   let numDonors = 0;
   countyData.forEach((donor) => {
-    if (e.target.value === donor.county_nam) {
+    if (e.target.value === donor.County) {
       numDonors = donor.Registrations;
     }
   });
