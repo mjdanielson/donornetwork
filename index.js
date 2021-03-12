@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
 });
 
 //CSV link
-const csvUrl = "/assets/data/Wisconsin_Data_Test.csv";
+const csvUrl = "assets/data/Versiti_Registrations.csv";
 const csvPromise = papaPromise(csvUrl);
 
 map.on("load", function () {
@@ -22,11 +22,11 @@ map.on("load", function () {
           source: "wi_counties-0pve9b",
           sourceLayer: "wi_counties-0pve9b",
           //Unqiue ID row name for data join
-          id: row.county_nam,
+          id: row.County,
         },
         //Row(s) to style/interact with
         {
-          num_donor: row.num_donors,
+          num_donor: row.Registrations,
         }
       );
     });
@@ -63,19 +63,22 @@ map.on("load", function () {
           "interpolate",
           ["linear"],
           ["feature-state", "num_donor"],
+          0,
+          "#a9abab",
           1,
           "#fad249",
-          9.875,
-          "#f1b141",
-          18.75,
+          10,
+          "#fad249",
+          40,
           "#e08438",
-          36.5,
-          "#d55866",
-          54.25,
+          70,
           "#ce3669",
-          72,
+          99,
+          "#ce3669",
+          100,
           "#883057",
         ],
+
         "fill-opacity": 0.8,
       },
     },
@@ -102,8 +105,8 @@ map.on("load", function () {
         "line-width": [
           "case",
           ["boolean", ["feature-state", "hover"], false],
-          3,
-          0.5,
+          3.5,
+          0.75,
         ],
       },
     },
@@ -114,7 +117,7 @@ map.on("load", function () {
   // feature state for the feature under the mouse.
   map.on("mousemove", "wi-district-fill", function (e) {
     if (e.features.length > 0) {
-      selectCounty(e.features[0].id, e.features[0].properties.dnr_cnty_c);
+      selectCounty(e.features[0].id, e.features[0].state.num_donor);
     }
   });
 
@@ -155,7 +158,7 @@ const onSelect = (e) => {
   let numDonors = 0;
   countyData.forEach((donor) => {
     if (e.target.value === donor.county_nam) {
-      numDonors = donor.num_donors;
+      numDonors = donor.Registrations;
     }
   });
   selectCounty(e.target.value, numDonors);
@@ -185,6 +188,9 @@ const highlightCounty = (id) => {
 };
 
 const selectCounty = (id, donors) => {
+  if (donors <= 10 && donors >= 1) {
+    donors = "1-10";
+  }
   modal.innerHTML =
     `<span style= "font-weight:bold">` +
     `${id} County: ` +
@@ -196,13 +202,14 @@ const selectCounty = (id, donors) => {
 csvPromise.then((data) => {
   // console.log(data);
   countyData = data.data;
-  countyData.sort((a, b) => a.county_nam.localeCompare(b.county_nam));
+
+  countyData.sort((a, b) => a.County.localeCompare(b.County));
   console.log(countyData);
   countyData.forEach((item) => {
     let option = document.createElement("option");
-    option.id = item.num_donors;
-    option.value = item.county_nam;
-    option.text = item.county_nam;
+    option.id = item.Registrations;
+    option.value = item.County;
+    option.text = item.County;
     selectList.appendChild(option);
     selectList.onchange = onSelect;
   });
