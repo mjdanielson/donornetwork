@@ -200,7 +200,7 @@ const selectCounty = (id, donors) => {
 };
 
 csvPromise.then((data) => {
-  console.log(data);
+  // console.log(data);
   countyData = data.data;
 
   countyData.sort((a, b) => a.County.localeCompare(b.County));
