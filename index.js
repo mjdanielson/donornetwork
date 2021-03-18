@@ -1,10 +1,10 @@
 let hoveredCountyId = null;
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoibWpkYW5pZWxzb24iLCJhIjoiY2s5bTJodXluMHVhYTNybWk1eTMxN2lidiJ9.DU-KkKoefUHAlSidTjqsiQ";
+  "pk.eyJ1IjoidmVyc2l0aXdpIiwiYSI6ImNrbTJyMXZudDIyZjEydWt2OGZ6YXVyamEifQ.hVR1xcsVzObZj-K4I4QXtg";
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mjdanielson/cklh54ve0031n18sk666l6htj",
+  style: "mapbox://styles/versitiwi/ckmf58n6udas417tfjiw68dpf",
   center: [-89.6045, 44.76234],
   zoom: 6.5,
 });
@@ -19,8 +19,8 @@ map.on("load", function () {
       map.setFeatureState(
         {
           //Source tileset and source layer
-          source: "wi_counties-0pve9b",
-          sourceLayer: "wi_counties-0pve9b",
+          source: "wi_versiti-bsje4m",
+          sourceLayer: "wi_versiti-bsje4m",
           //Unqiue ID row name for data join
           id: row.County,
         },
@@ -43,9 +43,9 @@ map.on("load", function () {
   }
 
   //Add source layer
-  map.addSource("wi_counties-0pve9b", {
+  map.addSource("wi_versiti-bsje4m", {
     type: "vector",
-    url: "mapbox://mjdanielson.dlg5bhua",
+    url: "mapbox://versitiwi.7u8k6xlc",
     promoteId: "county_nam",
   });
 
@@ -55,8 +55,8 @@ map.on("load", function () {
     {
       id: "wi-district-fill",
       type: "fill",
-      source: "wi_counties-0pve9b",
-      "source-layer": "wi_counties-0pve9b",
+      source: "wi_versiti-bsje4m",
+      "source-layer": "wi_versiti-bsje4m",
       layout: {},
       paint: {
         "fill-color": [
@@ -89,8 +89,8 @@ map.on("load", function () {
     {
       id: "wi-district-line",
       type: "line",
-      source: "wi_counties-0pve9b",
-      "source-layer": "wi_counties-0pve9b",
+      source: "wi_versiti-bsje4m",
+      "source-layer": "wi_versiti-bsje4m",
       layout: {
         "line-join": "round",
         "line-cap": "round",
@@ -127,8 +127,8 @@ map.on("load", function () {
     if (hoveredCountyId) {
       map.setFeatureState(
         {
-          source: "wi_counties-0pve9b",
-          sourceLayer: "wi_counties-0pve9b",
+          source: "wi_versiti-bsje4m",
+          sourceLayer: "wi_versiti-bsje4m",
           id: hoveredCountyId,
         },
         { hover: false }
@@ -173,8 +173,8 @@ const highlightCounty = (id) => {
   if (hoveredCountyId) {
     map.setFeatureState(
       {
-        source: "wi_counties-0pve9b",
-        sourceLayer: "wi_counties-0pve9b",
+        source: "wi_versiti-bsje4m",
+        sourceLayer: "wi_versiti-bsje4m",
         id: hoveredCountyId,
       },
       { hover: false }
@@ -183,8 +183,8 @@ const highlightCounty = (id) => {
   hoveredCountyId = id;
   map.setFeatureState(
     {
-      source: "wi_counties-0pve9b",
-      sourceLayer: "wi_counties-0pve9b",
+      source: "wi_versiti-bsje4m",
+      sourceLayer: "wi_versiti-bsje4m",
       id: hoveredCountyId,
     },
     { hover: true }
