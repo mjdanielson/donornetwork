@@ -3,12 +3,6 @@ body {
   padding: 0;
 }
 
-#map {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 #legend {
   font-family: "Open Sans", sans-serif;
 }
