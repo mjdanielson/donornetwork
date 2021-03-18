@@ -79,7 +79,7 @@ map.on("load", function () {
           "#883057",
         ],
 
-        "fill-opacity": 0.8,
+        "fill-opacity": 0.85,
       },
     },
     firstSymbolId
@@ -136,6 +136,11 @@ map.on("load", function () {
     }
     hoveredStateId = null;
   });
+
+  
+  map.fitBounds([[-92.988,
+    46.830],[-86.902, 41.558] ], { padding: 50 });
+
 });
 
 function papaPromise(url) {
@@ -191,12 +196,26 @@ const selectCounty = (id, donors) => {
   if (donors <= 10 && donors >= 1) {
     donors = "1-10";
   }
+
+  if (donors === 0){
+
   modal.innerHTML =
-    `<span style= "font-weight:bold">` +
-    `${id} County: ` +
-    `</span>` +
-    ` ${donors} people waiting`;
+  `<span style= "font-weight:bold">` +
+  `${id} County: ` +
+  `</span>` +
+  `No data available`;
   highlightCounty(id);
+
+  } else {
+
+      modal.innerHTML =
+      `<span style= "font-weight:bold">` +
+      `${id} County: ` +
+      `</span>` +
+      ` ${donors} people waiting`;
+    highlightCounty(id);
+    };
+
 };
 
 csvPromise.then((data) => {
